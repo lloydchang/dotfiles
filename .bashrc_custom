@@ -1,2 +1,2 @@
-source ~/dotfiles/.git-aliases.bash
+source ~/dotfiles/.git-aliases.sh
 source ~/dotfiles/.git-completion.bash
