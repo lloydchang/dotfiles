@@ -230,5 +230,7 @@ fi
 ## -- 3) User-customized code  --
 ## ------------------------------
 
+stty erase '^?'
+
 ## Define any user-specific variables you want here.
 source ~/.bashrc_custom
