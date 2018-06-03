@@ -160,9 +160,14 @@ fi
 # See: http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
 shopt -s histappend
 
+function parse_git_branch {
+  ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
+  echo "("${ref#refs/heads/}")"
+}
+
 # Make prompt informative
 # See:  http://www.ukuug.org/events/linux2003/papers/bash_tips/
-PS1="\[\033[0;34m\][\u@\h:\w]$\[\033[0m\]"
+PS1="\[\033[0;34m\][\u@\h:\w]$\[\033[0m\] \$(parse_git_branch)\$ "
 
 ## -----------------------
 ## -- 2) Set up aliases --
@@ -224,6 +229,8 @@ fi
 ## ------------------------------
 ## -- 3) User-customized code  --
 ## ------------------------------
+
+stty erase '^?'
 
 ## Define any user-specific variables you want here.
 source ~/.bashrc_custom
