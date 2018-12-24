@@ -217,14 +217,14 @@ command -v rlwrap >/dev/null 2>&1 || { echo >&2 "Install rlwrap to use node: sud
 
 # 2.7) node.js and nvm
 # http://nodejs.org/api/repl.html#repl_repl
-alias node="env NODE_NO_READLINE=1 rlwrap node"
-alias node_repl="node -e \"require('repl').start({ignoreUndefined: true})\""
-export NODE_DISABLE_COLORS=1
-if [ -s ~/.nvm/nvm.sh ]; then
-    NVM_DIR=~/.nvm
-    source ~/.nvm/nvm.sh
-    nvm use v0.10.12 &> /dev/null # silence nvm use; needed for rsync
-fi
+# alias node="env NODE_NO_READLINE=1 rlwrap node"
+# alias node_repl="node -e \"require('repl').start({ignoreUndefined: true})\""
+# export NODE_DISABLE_COLORS=1
+# if [ -s ~/.nvm/nvm.sh ]; then
+#     NVM_DIR=~/.nvm
+#     source ~/.nvm/nvm.sh
+#     nvm use v0.10.12 &> /dev/null # silence nvm use; needed for rsync
+# fi
 
 ## ------------------------------
 ## -- 3) User-customized code  --
@@ -234,3 +234,21 @@ stty erase '^?'
 
 ## Define any user-specific variables you want here.
 source ~/.bashrc_custom
+# export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+export ANDROID_HOME=$ANDROID_SDK_ROOT
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# JDK 1.8
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+# JDK 10
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.10`
+
+# JDK 11
+# export JAVA_HOME=`/usr/libexec/java_home -v 11`
+
+# Go Lang
+export PATH=$PATH:$GOPATH/bin

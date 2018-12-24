@@ -1,2 +1,5 @@
 source ~/dotfiles/.git-aliases.sh
 source ~/dotfiles/.git-completion.bash
+
+export CLICOLOR=1
+export LSCOLORS=exgxbxdxcxegedxbxgxcxd
